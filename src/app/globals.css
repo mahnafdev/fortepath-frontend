@@ -2,8 +2,8 @@
 @import "@heroui/styles";
 
 :root {
-	--background: #1e101e;
-	--foreground: #fef9fe;
+	--background: #131115;
+	--foreground: #fdf9fd;
 	--primary-100: #f3e8ff;
 	--primary-200: #e9d5ff;
 	--primary-300: #d8b4fe;
@@ -13,8 +13,10 @@
 	--primary-700: #7e22ce;
 	--primary-800: #6b21a8;
 	--primary-900: #581c87;
+	--primary-950: #360865;
 	/* --primary-100: #f5edff;
 	--primary-200: #eadbff;
+    --primary-300: #D2BFFF
 	--primary-400: #b794f4;
 	--primary-500: #9f7aea;
 	--primary-600: #805ad5;
@@ -35,6 +37,7 @@
 	--color-primary-700: var(--primary-700);
 	--color-primary-800: var(--primary-800);
 	--color-primary-900: var(--primary-900);
+	--color-primary-950: var(--primary-950);
 }
 
 @media (prefers-color-scheme: light) {
@@ -45,5 +48,5 @@
 }
 
 body {
-	font-family: "Trebuchet MS", sans-serif;
+	font-family: "Trebuchet MS", "Verdana", sans-serif;
 }

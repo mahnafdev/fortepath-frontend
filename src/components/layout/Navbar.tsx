@@ -4,7 +4,7 @@ import { Button } from "@heroui/react";
 
 export const Navbar = () => {
 	return (
-		<nav className="fixed top-0 left-0 min-w-screen w-full px-80 py-4 shadow-md shadow-black/7.5">
+		<nav className="bg-background/75 backdrop-blur-md fixed top-0 left-0 min-w-screen w-full px-80 py-4 shadow-md shadow-black/7.5 z-50">
 			{/* Flex container */}
 			<div className="flex items-center justify-between">
 				{/* Logo */}

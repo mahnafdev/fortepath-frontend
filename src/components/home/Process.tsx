@@ -37,12 +37,10 @@ export const Process = () => {
 									<p className="mt-2 text-lg font-medium text-primary-500">
 										Step {idx + 1}
 									</p>
-
 									{/* Title */}
 									<h3 className="mt-1 text-xl font-semibold text-primary-50">
 										{step.title}
 									</h3>
-
 									{/* Description */}
 									<p className="mt-1 text-zinc-300">{step.description}</p>
 								</div>

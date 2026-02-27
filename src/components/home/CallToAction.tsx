@@ -22,7 +22,6 @@ export const CallToAction = () => {
 				<div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
 					{/* CTA for Students */}
 					<Link
-						// @ts-expect-error href accepts string
 						href="/tutors"
 						className="w-full md:w-auto rounded-[10px] bg-primary-600 px-6 py-3 font-medium text-lg transition duration-250 hover:bg-primary-600 hover:shadow-lg hover:shadow-primary-500/20 active:shadow-none"
 					>
@@ -31,7 +30,7 @@ export const CallToAction = () => {
 					{/* CTA for Tutors */}
 					<Link
 						// @ts-expect-error href accepts string
-						href="/become-tutor"
+						href="/auth/signup"
 						className="w-full md:w-auto rounded-[10px] border border-primary-500 px-6 py-3 text-lg text-primary-400 font-medium transition duration-250 hover:bg-primary-600 hover:text-foreground"
 					>
 						Become a Tutor

@@ -1,5 +1,6 @@
 import { Tutor } from "@/app/tutors/page";
 import { Avatar, Chip } from "@heroui/react";
+import Link from "next/link";
 
 export const TutorCard = ({ tutor }: { tutor: Tutor }) => {
 	// Calculate average rating
@@ -19,24 +20,32 @@ export const TutorCard = ({ tutor }: { tutor: Tutor }) => {
 			: "0.0";
 
 	return (
-		<div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 hover:border-primary-700 transition">
-			{/* Tutor Profile Info */}
-			<div className="flex items-center gap-3 mb-4">
-				{/* Profile Picture */}
-				<Avatar>
-					<Avatar.Image
-						src={tutor.user?.image}
-						alt={`${tutor.user.name} profile picture`}
-					/>
-				</Avatar>
-				<div>
-					{/* Name */}
-					<h3 className="font-semibold tracking-wide">{tutor.user.name}</h3>
-					{/* Designation */}
-					<p className="text-sm text-zinc-300">{tutor.designation}</p>
+		<div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-4 py-5 hover:border-primary-700 transition">
+			<Link
+				href={`/tutors/${tutor.id}`}
+				target="_blank"
+			>
+				<div className="flex items-center gap-3 mb-4 group">
+					{/* Profile Picture */}
+					<Avatar>
+						<Avatar.Image
+							src={tutor.user?.image}
+							alt={`${tutor.user.name} profile picture`}
+						/>
+					</Avatar>
+					<div>
+						{/* Name */}
+						<h3 className="font-semibold tracking-wide -mb-0.5 group-hover:text-primary-300 transition-colors duration-200">
+							{tutor.user.name}
+						</h3>
+						{/* Designation */}
+						<p className="text-[15px] text-zinc-300 group-hover:text-primary-200 transition-colors duration-200">
+							{tutor.designation}
+						</p>
+					</div>
 				</div>
-			</div>
-			<div className="flex flex-wrap gap-2 mb-4">
+			</Link>
+			<div className="flex flex-wrap gap-1 mb-4">
 				{/* Categories */}
 				{tutor.tutorCategories.map(
 					(tc: { category: { name: string; slug: string } }) => (
@@ -53,7 +62,9 @@ export const TutorCard = ({ tutor }: { tutor: Tutor }) => {
 				)}
 			</div>
 			<div className="flex items-center justify-between text-zinc-400">
+				{/* Hourly Rate */}
 				<span>${tutor.hourlyRate}/hr</span>
+				{/* Average Rating */}
 				<span>⭐ {avgRating}</span>
 			</div>
 		</div>

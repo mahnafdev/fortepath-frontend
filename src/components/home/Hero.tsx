@@ -63,7 +63,6 @@ export const Hero = () => {
 			{/* Buttons */}
 			<div className="flex justify-center gap-4">
 				<Link
-					// @ts-expect-error href accepts string
 					href="/tutors"
 					target="_blank"
 				>
@@ -77,7 +76,7 @@ export const Hero = () => {
 				</Link>
 				<Link
 					// @ts-expect-error href accepts string
-					href="/become-tutor"
+					href="/auth/signup"
 					target="_blank"
 				>
 					<Button

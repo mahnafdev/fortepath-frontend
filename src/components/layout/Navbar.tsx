@@ -38,7 +38,6 @@ export const Navbar = () => {
 						About
 					</Link>
 					<Link
-						// @ts-expect-error href accepts string
 						href="/tutors"
 						target="_blank"
 						className="px-3 py-1.5 rounded-lg hover:text-primary-400 hover:bg-primary-900/20 active:text-primary-500 active:bg-primary-900/25 transition-colors duration-250"

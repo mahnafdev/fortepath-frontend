@@ -1,8 +1,6 @@
 import { TutorsFilters } from "@/components/tutors/TutorsFilters";
 import { TutorsGrid } from "@/components/tutors/TutorsGrid";
 
-export const dynamic = "force-dynamic";
-
 export interface Tutor {
 	id: string;
 	designation?: string;
@@ -52,7 +50,8 @@ const Tutors = async ({ searchParams }: Props) => {
 		},
 	);
 	// Parse tutors response
-	const { total: totalTutors, data: tutors } = await tutorsRes.json();
+	const { total: totalTutors, data: tutors }: { total: number; data: Tutor[] } =
+		await tutorsRes.json();
 
 	// Fetch categories and cache it with time revalidation
 	const categoriesRes = await fetch(

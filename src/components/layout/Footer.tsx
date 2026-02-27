@@ -45,13 +45,6 @@ export const Footer = () => {
 							</Link>
 							<Link
 								// @ts-expect-error href accepts string
-								href="/become-tutor"
-								className="text-zinc-300 hover:text-primary-400 transition duration-200"
-							>
-								Become a Tutor
-							</Link>
-							<Link
-								// @ts-expect-error href accepts string
 								href="/login"
 								className="text-zinc-300 hover:text-primary-400 transition duration-200"
 							>

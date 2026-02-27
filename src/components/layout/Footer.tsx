@@ -4,7 +4,7 @@ import Link from "next/link";
 export const Footer = () => {
 	return (
 		<footer className="bg-zinc-950">
-			<div className="px-80 py-20">
+			<div className="px-80 pt-16 pb-4">
 				<div className="grid gap-12 md:grid-cols-2">
 					{/* Platform Info */}
 					<div>
@@ -31,7 +31,6 @@ export const Footer = () => {
 						</h4>
 						<div className="flex flex-col gap-2 md:items-end">
 							<Link
-								// @ts-expect-error href accepts string
 								href="/tutors"
 								className="text-zinc-300 hover:text-primary-400 transition duration-200"
 							>

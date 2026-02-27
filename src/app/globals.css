@@ -2,6 +2,7 @@
 @import "@heroui/styles";
 
 :root {
+	color-scheme: dark;
 	--background: #131115;
 	--foreground: #fdf9fd;
 	--primary-100: #f3e8ff;
@@ -42,6 +43,7 @@
 
 @media (prefers-color-scheme: light) {
 	:root {
+		color-scheme: light;
 		--background: #fef1fe;
 		--foreground: #1e191e;
 	}

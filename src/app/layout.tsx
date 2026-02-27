@@ -6,7 +6,6 @@ import { Footer } from "@/components/layout/Footer";
 export const metadata: Metadata = {
 	applicationName: "FortePath",
 	title: "FortePath",
-	description: "",
 	alternates: {
 		canonical: "https://fortepath.vercel.app",
 		languages: {

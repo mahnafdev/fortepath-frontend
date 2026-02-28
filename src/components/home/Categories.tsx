@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 // Category type
 type Category = {
-	id: string;
 	name: string;
+	slug: string;
 };
 
 export const Categories = () => {
@@ -51,8 +51,8 @@ export const Categories = () => {
 				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
 					{categories.map((category) => (
 						<div
-							key={category.id}
-							className="group cursor-pointer rounded-full border border-zinc-700 bg-zinc-900 p-4 text-center transition duration-200 hover:border-primary-900 hover:bg-zinc-900/65"
+							key={category.slug}
+							className="group cursor-default rounded-full border border-zinc-700 bg-zinc-900 p-4 text-center transition duration-200 hover:border-primary-900 hover:bg-zinc-900/65"
 						>
 							<h3 className="text-xl font-semibold text-zinc-200 group-hover:text-primary-200 transition duration-200">
 								{category.name}

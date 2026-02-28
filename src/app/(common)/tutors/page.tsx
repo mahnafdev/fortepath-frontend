@@ -1,5 +1,5 @@
-import { TutorsFilters } from "@/components/tutors/TutorsFilters";
-import { TutorsGrid } from "@/components/tutors/TutorsGrid";
+import { TutorsFilters } from "@/components/shared/TutorsFilters";
+import { TutorsGrid } from "@/components/shared/TutorsGrid";
 
 export interface Tutor {
 	id: string;
@@ -74,7 +74,9 @@ const Tutors = async ({ searchParams }: Props) => {
 				<p className="mt-3 text-zinc-300">
 					Discover experienced tutors and book dedicated learning sessions.
 				</p>
-				<p className="mt-3 text-zinc-400">Showing {totalTutors} tutors</p>
+				<p className="mt-3 text-zinc-400">
+					Showing <span className="text-primary-300/70">{totalTutors}</span> tutors
+				</p>
 			</div>
 
 			{/* Filters */}

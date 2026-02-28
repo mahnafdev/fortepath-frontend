@@ -1,4 +1,4 @@
-import { Tutor } from "@/app/tutors/page";
+import { Tutor } from "@/app/(common)/tutors/page";
 import { TutorCard } from "./TutorCard";
 
 type Props = {

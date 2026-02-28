@@ -1,4 +1,4 @@
-import { Tutor } from "@/app/tutors/page";
+import { Tutor } from "@/app/(common)/tutors/page";
 import { Avatar, Chip } from "@heroui/react";
 import Link from "next/link";
 

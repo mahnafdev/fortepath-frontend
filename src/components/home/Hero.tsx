@@ -75,7 +75,6 @@ export const Hero = () => {
 					</Button>
 				</Link>
 				<Link
-					// @ts-expect-error href accepts string
 					href="/auth/signup"
 					target="_blank"
 				>

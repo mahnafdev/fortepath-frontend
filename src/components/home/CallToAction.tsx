@@ -29,7 +29,6 @@ export const CallToAction = () => {
 					</Link>
 					{/* CTA for Tutors */}
 					<Link
-						// @ts-expect-error href accepts string
 						href="/auth/signup"
 						className="w-full md:w-auto rounded-[10px] border border-primary-500 px-6 py-3 text-lg text-primary-400 font-medium transition duration-250 hover:bg-primary-600 hover:text-foreground"
 					>

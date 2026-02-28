@@ -1,7 +1,11 @@
+import { getServerSession } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-export const Footer = () => {
+export const Footer = async () => {
+	// Get user from session
+	const sessionData = await getServerSession();
+	const user = sessionData.user;
 	return (
 		<footer className="bg-zinc-950">
 			<div className="px-80 pt-16 pb-4">
@@ -37,18 +41,32 @@ export const Footer = () => {
 								Find Tutors
 							</Link>
 							<Link
-								// @ts-expect-error href accepts string
+								// @ts-expect-error route will be created
 								href="/categories"
 								className="text-zinc-300 hover:text-primary-400 transition duration-200"
 							>
 								Categories
 							</Link>
-							<Link
-								href="/auth/login"
-								className="text-zinc-300 hover:text-primary-400 transition duration-200"
-							>
-								Sign In
-							</Link>
+							{!user ? (
+								<Link
+									href="/auth/login"
+									className="text-zinc-300 hover:text-primary-400 transition duration-200"
+								>
+									Sign In
+								</Link>
+							) : (
+								<Link
+									// @ts-expect-error route will be created
+									href={
+										user.role === "TUTOR"
+											? "/tutor/dashboard"
+											: "/dashboard"
+									}
+									className="text-zinc-300 hover:text-primary-400 transition duration-200"
+								>
+									Dashboard
+								</Link>
+							)}
 						</div>
 					</div>
 				</div>

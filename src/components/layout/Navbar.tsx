@@ -56,7 +56,6 @@ export const Navbar = () => {
 				{/* CTA Buttons */}
 				<div className="flex items-center gap-3">
 					<Link
-						// @ts-expect-error href accepts string
 						href="/auth/signup"
 						className="rounded-full"
 					>
@@ -69,7 +68,6 @@ export const Navbar = () => {
 						</Button>
 					</Link>
 					<Link
-						// @ts-expect-error href accepts string
 						href="/auth/login"
 						className="rounded-full"
 					>

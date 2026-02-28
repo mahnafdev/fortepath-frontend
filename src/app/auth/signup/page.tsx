@@ -63,9 +63,11 @@ const SignupPage = () => {
 			});
 		}
 
+		// End loading
+		setIsLoading(false);
+
 		// Redirect to Login page
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		router.push("/auth/login" as any);
+		router.push("/auth/login");
 	};
 
 	// Handler for Google signup
@@ -73,7 +75,7 @@ const SignupPage = () => {
 		if (role !== "STUDENT") return;
 		await authClient.signIn.social({
 			provider: "google",
-			callbackURL: "http://localhost:3000/auth/login",
+			callbackURL: "http://localhost:3000",
 		});
 	};
 

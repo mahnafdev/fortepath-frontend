@@ -44,8 +44,7 @@ export const Footer = () => {
 								Categories
 							</Link>
 							<Link
-								// @ts-expect-error href accepts string
-								href="/login"
+								href="/auth/login"
 								className="text-zinc-300 hover:text-primary-400 transition duration-200"
 							>
 								Sign In

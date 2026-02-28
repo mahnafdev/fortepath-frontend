@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
+import { ReactNode } from "react";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
 	applicationName: "FortePath",
@@ -19,16 +18,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
 	children,
 }: Readonly<{
-	children: React.ReactNode;
+	children: ReactNode;
 }>) {
 	return (
 		<html lang="en">
-			<body className={`bg-background text-foreground antialiased scroll-smooth`}>
-				<header>
-					<Navbar />
-				</header>
+			<body className={`bg-background text-foreground scroll-smooth antialiased`}>
 				{children}
-				<Footer />
 			</body>
 		</html>
 	);

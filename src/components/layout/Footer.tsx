@@ -57,11 +57,7 @@ export const Footer = async () => {
 							) : (
 								<Link
 									// @ts-expect-error route will be created
-									href={
-										user.role === "TUTOR"
-											? "/tutor/dashboard"
-											: "/dashboard"
-									}
+									href="/dashboard"
 									className="text-zinc-300 hover:text-primary-400 transition duration-200"
 								>
 									Dashboard

@@ -34,14 +34,6 @@ export const Navbar = async () => {
 						Home
 					</Link>
 					<Link
-						// @ts-expect-error route will be created
-						href="/about"
-						target="_blank"
-						className="px-3 py-1.5 rounded-lg hover:text-primary-400 hover:bg-primary-900/20 active:text-primary-500 active:bg-primary-900/25 transition-colors duration-250"
-					>
-						About
-					</Link>
-					<Link
 						href="/tutors"
 						target="_blank"
 						className="px-3 py-1.5 rounded-lg hover:text-primary-400 hover:bg-primary-900/20 active:text-primary-500 active:bg-primary-900/25 transition-colors duration-250"
@@ -100,22 +92,14 @@ export const Navbar = async () => {
 								<Dropdown.Menu>
 									<Dropdown.Item
 										textValue="Profile"
-										href={
-											user.role === "TUTOR"
-												? "/tutor/profile"
-												: "/dashboard/profile"
-										}
+										href="/dashboard/profile"
 										className="text-base hover:bg-zinc-800 transition-colors duration-200 rounded-xl"
 									>
 										Profile
 									</Dropdown.Item>
 									<Dropdown.Item
 										textValue="Dashboard"
-										href={
-											user.role === "TUTOR"
-												? "/tutor/dashboard"
-												: "/dashboard"
-										}
+										href="/dashboard"
 										className="text-base hover:bg-zinc-800 transition-colors duration-200 rounded-xl"
 									>
 										Dashboard

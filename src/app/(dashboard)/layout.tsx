@@ -1,0 +1,19 @@
+import { AdminSidebar } from "@/components/layout/AdminSidebar";
+import { StudentSidebar } from "@/components/layout/StudentSidebar";
+import { TutorSidebar } from "@/components/layout/TutorSidebar";
+import { getServerSession } from "@/lib/utils";
+import { ReactNode } from "react";
+
+export default async function DashboardLayout({ children }: { children: ReactNode }) {
+	// Get user and session
+	const sessionData = await getServerSession();
+	const user = sessionData.user;
+	return (
+		<>
+			{user.role === "STUDENT" && <StudentSidebar />}
+			{user.role === "TUTOR" && <TutorSidebar />}
+			{user.role === "ADMIN" && <AdminSidebar />}
+			{children}
+		</>
+	);
+}

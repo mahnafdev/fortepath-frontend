@@ -9,11 +9,11 @@ export default async function DashboardLayout({ children }: { children: ReactNod
 	const sessionData = await getServerSession();
 	const user = sessionData.user;
 	return (
-		<>
+		<div className="flex">
 			{user.role === "STUDENT" && <StudentSidebar />}
 			{user.role === "TUTOR" && <TutorSidebar />}
 			{user.role === "ADMIN" && <AdminSidebar />}
 			{children}
-		</>
+		</div>
 	);
 }

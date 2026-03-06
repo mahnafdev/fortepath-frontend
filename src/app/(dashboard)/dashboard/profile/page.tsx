@@ -2,7 +2,7 @@ import { getServerSession } from "@/lib/utils";
 import { Avatar } from "@heroui/react";
 
 const StudentProfile = async () => {
-	// Fetch current user
+	// Fetch student
 	const sessionData = await getServerSession();
 	const { session, user } = await sessionData;
 
@@ -22,15 +22,15 @@ const StudentProfile = async () => {
 				</Avatar>
 				{/* Name */}
 				<h2 className="text-3xl font-bold text-center mb-6">{user.name}</h2>
-				<div className="space-y-3">
+				<div className="space-y-2">
 					{/* Email */}
 					<div className="flex items-center justify-between gap-x-4">
 						<span className="text-lg">Email</span>
 						<span className="text-zinc-300/75">{user.email}</span>
 					</div>
-					{/* Signed up at */}
+					{/* Signup Date */}
 					<div className="flex items-center justify-between gap-x-4">
-						<span className="text-lg">Signed up at</span>
+						<span className="text-lg">Joined on</span>
 						<span
 							className="text-zinc-300/75"
 							title={new Date(user.createdAt).toLocaleString()}
@@ -38,9 +38,9 @@ const StudentProfile = async () => {
 							{new Date(user.createdAt).toLocaleDateString()}
 						</span>
 					</div>
-					{/* Email */}
+					{/* Last Login Data */}
 					<div className="flex items-center justify-between gap-x-4">
-						<span className="text-lg">Last logged in at</span>
+						<span className="text-lg">Logged in</span>
 						<span
 							className="text-zinc-300/75"
 							title={new Date(session.createdAt).toLocaleString()}

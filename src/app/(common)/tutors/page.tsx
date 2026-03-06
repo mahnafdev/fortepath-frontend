@@ -10,15 +10,15 @@ export interface Tutor {
 		name: string;
 		email: string;
 		image?: string;
+		tutorReviews: {
+			rating: number;
+		}[];
 	};
 	tutorCategories: {
 		category: {
 			name: string;
 			slug: string;
 		};
-	}[];
-	reviews: {
-		rating: number;
 	}[];
 }
 

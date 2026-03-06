@@ -72,6 +72,7 @@ const TutorProfilePage = async ({ params }: Props) => {
 						<Avatar.Image
 							src={tutor.user.image}
 							alt={`${tutor.user.name} profile picture`}
+							referrerPolicy="no-referrer"
 						/>
 					</Avatar>
 					<div className="flex-1">

@@ -27,6 +27,7 @@ const TutorProfile = async () => {
 					<Avatar.Image
 						src={tutor.user.image}
 						alt="Profile Picture"
+						referrerPolicy="no-referrer"
 					/>
 				</Avatar>
 				{/* Name */}

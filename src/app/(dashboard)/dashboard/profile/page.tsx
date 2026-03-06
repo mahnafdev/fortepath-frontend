@@ -18,6 +18,7 @@ const StudentProfile = async () => {
 					<Avatar.Image
 						src={user.image}
 						alt="Profile Picture"
+						referrerPolicy="no-referrer"
 					/>
 				</Avatar>
 				{/* Name */}

@@ -82,20 +82,23 @@ export const Navbar = async () => {
 							<Dropdown.Trigger>
 								<Avatar>
 									<Avatar.Image
-										src={user.image || undefined}
+										src={user.image}
 										alt="User Image"
+										referrerPolicy="no-referrer"
 									/>
 								</Avatar>
 							</Dropdown.Trigger>
 							<Dropdown.Popover className="bg-zinc-900 rounded-2xl">
 								<Dropdown.Menu>
-									<Dropdown.Item
-										textValue="Profile"
-										href={`/dashboard${user.role !== "STUDENT" ? `/${user.role.toLowerCase()}` : ""}/profile`}
-										className="text-base hover:bg-zinc-800 transition-colors duration-200 rounded-xl"
-									>
-										Profile
-									</Dropdown.Item>
+									{user.role !== "ADMIN" && (
+										<Dropdown.Item
+											textValue="Profile"
+											href={`/dashboard${user.role !== "STUDENT" ? `/${user.role.toLowerCase()}` : ""}/profile`}
+											className="text-base hover:bg-zinc-800 transition-colors duration-200 rounded-xl"
+										>
+											Profile
+										</Dropdown.Item>
+									)}
 									<Dropdown.Item
 										textValue="Dashboard"
 										href={`/dashboard${user.role !== "STUDENT" ? `/${user.role.toLowerCase()}` : ""}`}

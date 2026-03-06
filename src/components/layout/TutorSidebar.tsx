@@ -19,22 +19,19 @@ export const TutorSidebar = () => {
 			{/* Links */}
 			<div className="flex flex-col gap-y-3 text-xl tracking-wide">
 				<Link
-					// @ts-expect-error route will be created
 					href="/dashboard/tutor"
 					className="pl-3 -ml-3 border-l border-l-transparent hover:border-l-primary-500 transition-colors"
 				>
 					Dashboard
 				</Link>
 				<Link
-					// @ts-expect-error route will be created
 					href="/dashboard/tutor/profile"
 					className="pl-3 -ml-3 border-l border-l-transparent hover:border-l-primary-500 transition-colors"
 				>
 					Profile
 				</Link>
 				<Link
-					// @ts-expect-error route will be created
-					href="/dashboard/tutor/bookings"
+					href="/dashboard/tutor/sessions"
 					className="pl-3 -ml-3 border-l border-l-transparent hover:border-l-primary-500 transition-colors"
 				>
 					Sessions

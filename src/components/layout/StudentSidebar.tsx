@@ -25,7 +25,6 @@ export const StudentSidebar = () => {
 					Dashboard
 				</Link>
 				<Link
-					// @ts-expect-error route will be created
 					href="/dashboard/profile"
 					className="pl-3 -ml-3 border-l border-l-transparent hover:border-l-primary-500 transition-colors"
 				>

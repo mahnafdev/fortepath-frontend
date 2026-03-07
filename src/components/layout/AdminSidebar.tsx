@@ -42,6 +42,12 @@ export const AdminSidebar = () => {
 				>
 					Bookings
 				</Link>
+				<Link
+					href="/dashboard/admin/reviews"
+					className="pl-3 -ml-3 border-l border-l-transparent hover:border-l-primary-500 transition-colors"
+				>
+					Reviews
+				</Link>
 			</div>
 		</aside>
 	);

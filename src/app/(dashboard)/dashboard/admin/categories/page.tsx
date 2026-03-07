@@ -47,7 +47,10 @@ const AdminCategories = async () => {
 									{category.slug}
 								</div>
 								{/* Description */}
-								<div className="px-2 flex-1 line-clamp-1 text-[15px]">
+								<div
+									className="px-2 flex-1 line-clamp-1 text-[15px]"
+									title={category.description}
+								>
 									{category.description}
 								</div>
 							</div>

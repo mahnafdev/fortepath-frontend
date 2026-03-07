@@ -2,11 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Avatar, Button, Dropdown } from "@heroui/react";
 import { getServerSession } from "@/lib/utils";
+import { Logout } from "./Logout";
 
 export const Navbar = async () => {
 	// Get user from session
 	const sessionData = await getServerSession();
-	const user = sessionData.user;
+	const user = sessionData?.user;
 	return (
 		<nav className="bg-background/75 backdrop-blur-md fixed top-0 left-0 min-w-screen w-full px-80 py-4 shadow-md shadow-black/7.5 z-50">
 			{/* Flex container */}
@@ -106,6 +107,7 @@ export const Navbar = async () => {
 									>
 										Dashboard
 									</Dropdown.Item>
+									<Logout />
 								</Dropdown.Menu>
 							</Dropdown.Popover>
 						</Dropdown>

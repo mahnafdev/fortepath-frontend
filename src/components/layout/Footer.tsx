@@ -5,7 +5,7 @@ import Link from "next/link";
 export const Footer = async () => {
 	// Get user from session
 	const sessionData = await getServerSession();
-	const user = sessionData.user;
+	const user = sessionData?.user;
 	return (
 		<footer className="bg-zinc-950">
 			<div className="px-80 pt-16 pb-4">

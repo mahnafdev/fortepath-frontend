@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-interface CreateBookingForm {
+interface FormFields {
 	topic: string;
 	dueDate: string;
 	dueTime: string;
@@ -31,10 +31,10 @@ export const CreateBookingForm = ({
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm<CreateBookingForm>();
+	} = useForm<FormFields>();
 
 	// Handler for booking creation
-	const handleBooking = async (form: CreateBookingForm) => {
+	const handleBooking = async (form: FormFields) => {
 		// Start loading
 		setIsLoading(true);
 

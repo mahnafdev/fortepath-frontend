@@ -1,4 +1,6 @@
+import { AddReviewForm } from "@/components/form/AddReviewForm";
 import { CreateBookingForm } from "@/components/form/CreateBookingForm";
+import { ReviewCard } from "@/components/shared/ReviewCard";
 import { getServerSession } from "@/lib/utils";
 import { Avatar, Chip } from "@heroui/react";
 import { TbCurrencyDollar, TbMessage2Star, TbStar } from "react-icons/tb";
@@ -14,12 +16,10 @@ interface Review {
 	id: string;
 	rating: number;
 	feedback?: string;
-	student?: {
-		id: string;
+	student: {
 		name: string;
-		image?: string;
+		image: string;
 	};
-	createdAt: string;
 }
 
 export interface TutorProfile {
@@ -32,9 +32,9 @@ export interface TutorProfile {
 		name: string;
 		email: string;
 		image?: string;
+		tutorReviews: Review[];
 	};
 	tutorCategories: { category: Category }[];
-	reviews: Review[];
 }
 
 type Props = {
@@ -53,24 +53,27 @@ const TutorDetailsPage = async ({ params }: Props) => {
 
 	// Fetch the tutor and cache it
 	const tutorRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tutors/${id}`, {
-		cache: "force-cache",
+		cache: "no-store",
 	});
 	const { data: tutor }: { data: TutorProfile } = await tutorRes.json();
 
 	// Calculate average rating
 	const averageRating =
-		tutor?.reviews.length > 0
+		tutor?.user.tutorReviews.length > 0
 			? (
-					tutor.reviews.reduce((sum, review) => sum + Number(review.rating), 0) /
-					tutor.reviews.length
+					tutor.user.tutorReviews.reduce(
+						(sum, review) => sum + Number(review.rating),
+						0,
+					) / tutor.user.tutorReviews.length
 				).toFixed(1)
 			: "0.0";
 
 	return (
-		<div className="min-h-[calc(100vh-15rem)] px-64 py-28">
+		<div className="min-h-[calc(100vh-15rem)] px-64 py-28 space-y-12">
 			{tutor ? (
 				<>
-					<div className="max-w-lg mx-auto mb-8 flex flex-col md:flex-row gap-5 items-center md:items-start md:justify-center px-7 py-8 border border-zinc-800/60 rounded-4xl shadow-md shadow-zinc-950/50">
+					{/* Tutor Info */}
+					<div className="max-w-lg mx-auto flex flex-col md:flex-row gap-5 items-center md:items-start md:justify-center px-7 py-8 bg-zinc-900/50 border border-zinc-800/60 rounded-4xl shadow-md shadow-zinc-950/50">
 						{/* Profile Picture */}
 						<Avatar
 							size="lg"
@@ -120,17 +123,34 @@ const TutorDetailsPage = async ({ params }: Props) => {
 								<div className="flex items-center gap-2">
 									<TbMessage2Star size={22} />
 									<span>
-										{tutor.reviews.length}{" "}
-										{tutor.reviews.length !== 1 ? "reviews" : "review"}
+										{tutor.user.tutorReviews.length}{" "}
+										{tutor.user.tutorReviews.length !== 1
+											? "reviews"
+											: "review"}
 									</span>
 								</div>
 							</div>
 						</div>
 					</div>
+					{/* Create Booking Form */}
 					<CreateBookingForm
 						student={user}
 						tutorId={tutor.user.id}
 					/>
+					{/* Add Review Form */}
+					<AddReviewForm
+						student={user}
+						tutorId={tutor.user.id}
+					/>
+					{/* Reviews */}
+					<div className="max-w-sm mx-auto space-y-3">
+						{tutor.user.tutorReviews.map((review: Review) => (
+							<ReviewCard
+								key={review.id}
+								review={review}
+							/>
+						))}
+					</div>
 				</>
 			) : (
 				<div className="max-w-md mx-auto flex items-center justify-center px-5 h-40 border border-zinc-800/60 rounded-3xl">

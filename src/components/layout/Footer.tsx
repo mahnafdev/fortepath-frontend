@@ -55,7 +55,7 @@ export const Footer = async () => {
 								</Link>
 							) : (
 								<Link
-									// @ts-expect-error route will be created
+									// @ts-expect-error route exists
 									href={`/dashboard${user.role !== "STUDENT" ? `/${user.role.toLowerCase()}` : ""}`}
 									className="text-zinc-300 hover:text-primary-400 transition duration-200"
 								>

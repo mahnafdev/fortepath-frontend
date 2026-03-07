@@ -19,28 +19,24 @@ export const AdminSidebar = () => {
 			{/* Links */}
 			<div className="flex flex-col gap-y-3 text-xl tracking-wide">
 				<Link
-					// @ts-expect-error route will be created
 					href="/dashboard/admin"
 					className="pl-3 -ml-3 border-l border-l-transparent hover:border-l-primary-500 transition-colors"
 				>
 					Dashboard
 				</Link>
 				<Link
-					// @ts-expect-error route will be created
 					href="/dashboard/admin/users"
 					className="pl-3 -ml-3 border-l border-l-transparent hover:border-l-primary-500 transition-colors"
 				>
 					Users
 				</Link>
 				<Link
-					// @ts-expect-error route will be created
 					href="/dashboard/admin/categories"
 					className="pl-3 -ml-3 border-l border-l-transparent hover:border-l-primary-500 transition-colors"
 				>
 					Categories
 				</Link>
 				<Link
-					// @ts-expect-error route will be created
 					href="/dashboard/admin/bookings"
 					className="pl-3 -ml-3 border-l border-l-transparent hover:border-l-primary-500 transition-colors"
 				>
